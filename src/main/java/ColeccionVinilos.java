@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class ColeccionVinilos {
     public static void main(String[] args) {
-        String[][] vinilos = new String[20][3];
+        String[][] vinilos = new String[100][3];
 
         agregarVinilo(vinilos, "Iron Maiden", "Iron Maiden", "1980");
         agregarVinilo(vinilos, "Iron Maiden", "Killers", "1981");
@@ -24,14 +24,13 @@ public class ColeccionVinilos {
         System.out.println("Buscar artista: " + artista);
         System.out.println(resultadoBusqueda(artista, vinilos));
 
-
         mostrarBusquedaArtista(vinilos, artista);
         System.out.println("Vinilos:");
         mostrarColeccion(vinilos);
     }
 
     private static String resultadoBusqueda(String artista, String[][] vinilos) {
-        return String.format("El artista %s %s en la coleccion %n", artista, buscarArtista(vinilos, artista) ? "esta" : "no esta");
+        return "El artista %s %s en la coleccion %n".formatted(artista, buscarArtista(vinilos, artista) ? "esta" : "no esta");
     }
 
     private static int espaciosDisponiblesEnColeccion(String[][] vinilos) {
